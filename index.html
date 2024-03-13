@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Cat Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+    }
+    .neon-text {
+        color: #fff;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #095209, 0 0 30px #3d6f91, 0 0 40px #0f6c91, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00; /* Тень текста */
+    }
+    .container {
+        text-align: center;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    img {
+        width: 600px;
+        border-radius: 10%;
+        margin-bottom: 20px;
+        transition: transform 0.5s, opacity 1s; /* Добавлен переход для opacity */
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.1s ease-out; /* Уменьшенное время анимации */
+    }
+
+    /* Стили для кнопки "Нет" */
+    #no-button {
+        background-color: #800000; /* Бордовый цвет */
+        color: white;
+    }
+
+    /* Стили для кнопки "Да" */
+    #yes-button {
+        background-color: #2ecc71; /* Зеленый цвет */
+        color: white;
+    }
+
+    /* Скрыть элемент */
+    .hidden {
+        display: none;
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 id="message" class = "neon-text">Пошли гулять😊?</h1>
+    <img src="https://mygoldens.ru/wp-content/uploads/2023/07/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0-2023-06-30-%D0%B2-22.02.59.png" alt="Cute Cat" id="kittenImg"> 
+    <div class="buttons">
+        <button class="button runaway-button" id="no-button">Нет😭</button>
+        <button class="button simple-button" id="yes-button" onclick="showKitten()">Да💔</button>
+    </div>
+</div>
+
+<script>
+    var i = 0
+    document.getElementById('no-button').addEventListener('mouseover', function() {
+        var randomX = Math.floor(Math.random() * 400) - 200; // случайное число от -200 до 200
+        var randomY = Math.floor(Math.random() * 400) - 200; // случайное число от -200 до 200
+
+        this.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        if (i < 3){
+            this.textContent = "не поймаешь😛"
+        }
+        if (i>3 && i<5){
+            this.textContent = "говорю же не поймаешь😂"
+        }
+        if (i>5 && i <10){
+            this.textContent = "ну ладно...😢"
+        }
+        if (i>10 && i<15){
+            this.textContent = "💔"
+        }
+        if (i>20){
+            this.hidden = true
+        }
+        i++
+    });
+    function showKitten() {
+        var buttons = document.querySelectorAll('.button');
+        var kittenImg = document.getElementById('kittenImg');
+        var message = document.getElementById('message');
+
+        buttons.forEach(function(button) {
+            button.classList.add('hidden');
+        });
+        message.textContent = "УРАААААААААААААААААА";
+        kittenImg.style.width = '800px';
+        kittenImg.style.transition = 'transform 1s, opacity 1s'; /* Добавлен переход для opacity */
+        kittenImg.style.transform = 'rotate(360deg)';
+        kittenImg.src = "https://img.freepik.com/premium-photo/kitten-with-flowers-bouquet_798986-407.jpg"
+        kittenImg.style.borderRadius = "50%"
+        // kittenImg.style.opacity = '0'; /* Изменение прозрачности до 0 */
+
+
+
+        // setTimeout(function() {
+        //     kittenImg.classList.add('hidden'); // Скрыть изображение после анимации
+        // }, 500); // Задержка для окончания анимации
+    }
+</script>
+</body>
+</html>
