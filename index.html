@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f0c0d4, #c9d6ff);
+    background: linear-gradient(135deg, #f0c0d4, #5d7cdd);
     overflow: hidden;
 }
 
@@ -66,7 +66,7 @@ button {
 }
 
 #no-button {
-    background: #800000;
+    background: #3f2ab3;
     color: white;
 }
 
@@ -164,10 +164,10 @@ button {
         <h2>💌 Приглашение</h2>
 
         <ul>
-            <li>📍 Жду в кофейне #5 в 17:00</li>
-            <li>😊 Опоздания не осуждаются :)</li>
+            <li>📍 Место — кофейня #5 в 17:00</li>
+            <li>😊 Опоздания — не осуждаются</li>
             <li>👕 Форма одежды — комфортная для тебя</li>
-            <li>💖 Обязательно захватить милую улыбку</li>
+            <li>💖 Обязательно — захватить свою милую улыбку</li>
         </ul>
 
         <button onclick="finalStep()">Я буду 💚</button>
@@ -208,7 +208,7 @@ function showScene() {
 
     buttons.forEach(b => b.classList.add("hidden"));
 
-    message.textContent = "УРЯЯЯЯЯЯЯЯЯ 💖";
+    message.textContent = "УРЯЯЯЯЯЯЯЯЯ 💙";
 
     img.src = "happy2.gif";
     img.style.width = "500px";
@@ -231,7 +231,7 @@ function startHearts() {
     setInterval(() => {
         let heart = document.createElement("div");
         heart.classList.add("heart");
-        heart.innerText = "❤️";
+        heart.innerText = "💙";
 
         heart.style.left = Math.random() * window.innerWidth + "px";
         heart.style.animationDuration = (2 + Math.random() * 3) + "s";
